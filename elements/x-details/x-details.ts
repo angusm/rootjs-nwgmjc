@@ -1,17 +1,31 @@
-import { customElement } from 'lit/decorators.js';
+import { customElement, query } from 'lit/decorators.js';
 import { html, LitElement, unsafeCSS } from 'lit';
+import {provide} from '@lit-labs/context';
 import styles from './x-details.scss?inline';
+import { contentVisibilityContext } from '@/utils/content-visibility-context';
 
 @customElement('x-details')
 class XDetails extends LitElement {
   static styles = unsafeCSS(styles);
 
+  @query('details')
+  private detailsElement: HTMLDetailsElement;
+
+  @provide({context: contentVisibilityContext})
+  private contentVisibility = false;
+
+  private updateContentVisibility() {
+    this.contentVisibility = this.detailsElement.open;
+  }
+
   render() {
     return html`
-      <div class="container">
-          <p>Hello Shadow DOM!</p>
+      <details @toggle=${() => this.updateContentVisibility()}>
+        <summary>
+          <slot name="summary"></slot>
+        </summary>
         <slot></slot>
-      </div>
+      </details>
     `;
   }
 }

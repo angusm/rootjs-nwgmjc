@@ -1,8 +1,10 @@
 export function Page() {
   return (
     <>
-      {/* Custom elements are intelligently collected by Root.js. */}
-      <my-element>Content</my-element>
+      <x-details>
+        <b slot="summary">Learn more</b>
+        <x-video></x-video>
+      </x-details>
     </>
   );
 }
