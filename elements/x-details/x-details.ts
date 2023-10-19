@@ -15,6 +15,7 @@ class XDetails extends LitElement {
   private contentVisibility = false;
 
   private updateContentVisibility() {
+    // When the details element toggles, update the content visibility context.
     this.contentVisibility = this.detailsElement.open;
   }
 
