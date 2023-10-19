@@ -2,7 +2,7 @@ import { customElement, query } from 'lit/decorators.js';
 import { html, LitElement, unsafeCSS } from 'lit';
 import { provide } from '@lit-labs/context';
 import styles from './x-details.scss?inline';
-import { contentVisibilityContext } from '@/utils/content-visibility-context';
+import { ContentVisibility, contentVisibilityContext } from '@/utils/content-visibility-context';
 
 @customElement('x-details')
 class XDetails extends LitElement {
@@ -12,7 +12,7 @@ class XDetails extends LitElement {
   private detailsElement: HTMLDetailsElement;
 
   @provide({ context: contentVisibilityContext })
-  private contentVisibility = false;
+  private contentVisibility: ContentVisibility = false;
 
   private updateContentVisibility() {
     // When the details element toggles, update the content visibility context.

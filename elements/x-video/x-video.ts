@@ -1,4 +1,4 @@
-import { contentVisibilityContext } from '@/utils/content-visibility-context';
+import { ContentVisibility, contentVisibilityContext } from '@/utils/content-visibility-context';
 import { ContextConsumer } from '@lit-labs/context';
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
@@ -15,7 +15,7 @@ export class XVideo extends LitElement {
   private visibilityConsumer = new ContextConsumer(
     this,
     contentVisibilityContext,
-    (visible: Boolean) => {
+    (visible: ContentVisibility) => {
       if (!this.videoElement) {
         return;
       }
