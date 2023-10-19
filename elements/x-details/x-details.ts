@@ -1,6 +1,6 @@
 import { customElement, query } from 'lit/decorators.js';
 import { html, LitElement, unsafeCSS } from 'lit';
-import {provide} from '@lit-labs/context';
+import { provide } from '@lit-labs/context';
 import styles from './x-details.scss?inline';
 import { contentVisibilityContext } from '@/utils/content-visibility-context';
 
@@ -11,7 +11,7 @@ class XDetails extends LitElement {
   @query('details')
   private detailsElement: HTMLDetailsElement;
 
-  @provide({context: contentVisibilityContext})
+  @provide({ context: contentVisibilityContext })
   private contentVisibility = false;
 
   private updateContentVisibility() {

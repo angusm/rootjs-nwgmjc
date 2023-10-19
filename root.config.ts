@@ -1,26 +1,20 @@
-import path from "node:path";
-import { URL } from "node:url";
-import { defineConfig } from "@blinkk/root";
+import path from 'node:path';
+import { URL } from 'node:url';
+import { defineConfig } from '@blinkk/root';
 
-const rootDir = new URL(".", import.meta.url).pathname;
+const rootDir = new URL('.', import.meta.url).pathname;
 
 export default defineConfig({
   vite: {
-    server: {
-      hmr: {
-        protocol: 'ws',
-        host: 'localhost',
-      },
-    },
     resolve: {
       alias: {
-        "@": path.resolve(rootDir),
+        '@': path.resolve(rootDir),
       },
     },
     css: {
       preprocessorOptions: {
         scss: {
-          includePaths: [path.resolve(rootDir, "./styles")],
+          includePaths: [path.resolve(rootDir, './styles')],
         },
       },
     },

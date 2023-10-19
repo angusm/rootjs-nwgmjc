@@ -2,7 +2,7 @@ export function Page() {
   return (
     <>
       <x-details>
-        <b slot="summary">Learn more</b>
+        <span slot="summary">Learn more</span>
         <x-video></x-video>
       </x-details>
     </>

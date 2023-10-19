@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@blinkk/root": "^v1.0.0-rc.2",
-    "lit": "^2.7.0",
-    "@lit-labs/context": "0.5.0",
+    "lit": "^2.7.1",
+    "@lit-labs/context": "0.4.1",
     "preact": "^10.10.6",
     "preact-render-to-string": "^5.2.3",
     "prettier": "^2.8.7"
