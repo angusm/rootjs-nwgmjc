@@ -8,11 +8,11 @@
     "fix": "prettier --loglevel error --write ."
   },
   "dependencies": {
-    "@blinkk/root": "^v1.0.0-rc.2",
-    "lit": "^2.7.1",
+    "@blinkk/root": "^1.0.0-rc.2",
     "@lit-labs/context": "0.4.1",
-    "preact": "^10.10.6",
-    "preact-render-to-string": "^5.2.3",
+    "lit": "^2.7.1",
+    "preact": "^10.18.1",
+    "preact-render-to-string": "^6.2.2",
     "prettier": "^2.8.7"
   }
 }
