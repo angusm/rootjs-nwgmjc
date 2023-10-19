@@ -12,11 +12,12 @@ class XDetails extends LitElement {
   private detailsElement: HTMLDetailsElement;
 
   @provide({ context: contentVisibilityContext })
-  private contentVisibility: ContentVisibility = false;
+  private contentVisibility: ContentVisibility = {visible: this.detailsElement?.open};
 
-  private updateContentVisibility() {
-    // When the details element toggles, update the content visibility context.
-    this.contentVisibility = this.detailsElement.open;
+  updateContentVisibility() {
+    this.contentVisibility = {
+      visible: this.detailsElement.open
+    };
   }
 
   render() {

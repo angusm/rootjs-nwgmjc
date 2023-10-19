@@ -1,6 +1,7 @@
 import { ContentVisibility, contentVisibilityContext } from '@/utils/content-visibility-context';
 import { ContextConsumer } from '@lit-labs/context';
 import { LitElement, html } from 'lit';
+import { property } from 'lit/decorators.js';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { query } from 'lit/decorators/query.js';
 
@@ -9,17 +10,21 @@ export class XVideo extends LitElement {
   @query('video')
   private videoElement: HTMLVideoElement;
 
+  @property({type: Boolean, attribute: 'replay-on-visiblity-change'})
+  private replayOnVisibilityChange: boolean;
+
   /**
    * When the visibility context changes, play or reset the video.
    */
   private visibilityConsumer = new ContextConsumer(
     this,
     contentVisibilityContext,
-    (visible: ContentVisibility) => {
+    (value: ContentVisibility) => {
       if (!this.videoElement) {
         return;
       }
-      if (visible) {
+      console.log('Callback', this.replayOnVisibilityChange);
+      if (value.visible && this.replayOnVisibilityChange) {
         // Play.
         console.log('playing video');
         this.videoElement.play();

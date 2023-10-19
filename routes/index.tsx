@@ -1,7 +1,14 @@
 export function Page() {
   return (
     <>
-      <h2>Video inside a details</h2>
+      <h2>Video inside a details that replays</h2>
+      <p>Details element provides a visibility context.</p>
+      <x-details>
+        <span slot="summary">Learn more</span>
+        <x-video replay-on-visiblity-change></x-video>
+      </x-details>
+      <hr></hr>
+      <h2>Video inside a details that does <i>not</i> replay</h2>
       <p>Details element provides a visibility context.</p>
       <x-details>
         <span slot="summary">Learn more</span>
