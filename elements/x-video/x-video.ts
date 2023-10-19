@@ -8,10 +8,8 @@ export class XVideo extends LitElement {
     visibility: Boolean;
 
     render() {
-        return html`
-            <video>
-            </video>
-        `;
+        return html`<video>
+            </video>`;
     }
 }
 
