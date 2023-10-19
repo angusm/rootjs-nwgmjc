@@ -9,6 +9,9 @@ export class XVideo extends LitElement {
   @query('video')
   private videoElement: HTMLVideoElement;
 
+  /**
+   * When the visibility context changes, play or reset the video.
+   */
   private visibilityConsumer = new ContextConsumer(
     this,
     contentVisibilityContext,
