@@ -6,6 +6,12 @@ const rootDir = new URL(".", import.meta.url).pathname;
 
 export default defineConfig({
   vite: {
+    server: {
+      hmr: {
+        protocol: 'ws',
+        host: 'localhost',
+      },
+    },
     resolve: {
       alias: {
         "@": path.resolve(rootDir),
